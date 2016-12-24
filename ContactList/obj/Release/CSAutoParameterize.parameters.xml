@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MetricsContext-Web.config Connection String" description="MetricsContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=MetricsContext-20161217120925; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|MetricsContext-20161217120925.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Develop\\Alarm\ Clock\\ContactListApiApp\\ContactList\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MetricsContext']/@connectionString" />
+  </parameter>
+  <parameter name="MetricContext-Web.config Connection String" description="MetricContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=MetricContext-20161217121105; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|MetricContext-20161217121105.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Develop\\Alarm\ Clock\\ContactListApiApp\\ContactList\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MetricContext']/@connectionString" />
+  </parameter>
+  <parameter name="StorageConnectionString-Web.config Connection String" description="StorageConnectionString Connection String used in web.config by the application to access the database." defaultValue="DefaultEndpointsProtocol=https;AccountName=arduinoclockstorage;AccountKey=StbYH5mWkdx0UxKTBe+kfX75tzE8eD5znXV1lJJ5nBT0doO0wBepdEZH9DKnMcBo8JFll/gDc5LlZs4uUiXb3w==" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Develop\\Alarm\ Clock\\ContactListApiApp\\ContactList\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='StorageConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
