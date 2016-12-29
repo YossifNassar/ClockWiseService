@@ -22,9 +22,24 @@ namespace ContactList
 
             // Retrieve a reference to the table.
             CloudTable table = tableClient.GetTableReference("metrics");
+            table.CreateIfNotExists();
 
             return table;
         }
+
+        public static void DeleteTable()
+        {
+            // Parse the connection string and return a reference to the storage account.
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString);
+            // Create the table client.
+            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+
+            // Retrieve a reference to the table.
+            CloudTable table = tableClient.GetTableReference("metrics");
+
+            table.Delete();
+        }
+
         public static void CreateMetricsTable()
         {
             // Retrieve a reference to the table.
@@ -46,7 +61,7 @@ namespace ContactList
             // Print the fields for each customer.
             foreach (MetricEntity entity in table.ExecuteQuery(query))
             {
-                results.Add(new Metric { HeartRate = entity.HeartRate, SleepCycle = entity.SleepCycle });
+                results.Add(new Metric { Date = entity.Date ,HeartRate = entity.HeartRate, Movement = entity.Movement });
             }
 
             return results;
@@ -58,9 +73,7 @@ namespace ContactList
             CloudTable table = GetTableClient();
 
             // Create a new customer entity.
-            MetricEntity metric = new MetricEntity(m.SleepCycle, m.HeartRate);
-            metric.SleepCycle = m.SleepCycle;
-            metric.HeartRate = m.HeartRate;
+            MetricEntity metric = new MetricEntity(m.Date, m.Movement, m.HeartRate);
 
             // Create the TableOperation object that inserts the customer entity.
             TableOperation insertOperation = TableOperation.Insert(metric);

@@ -45,5 +45,21 @@ namespace ContactList.Controllers
             MetricsLogic.AddMetric(metric);
             return metric;
         }
+
+        /// <summary>
+        /// Deletes the metrics table
+        /// </summary>
+        /// <param name="contact">The new metric</param>
+        /// <returns>The saved metric</returns>
+        [HttpDelete]
+        [SwaggerResponse(HttpStatusCode.OK,
+            Description = "Deleted",
+            Type = typeof(String))]
+        [Route("~/metrics/table")]
+        public String Delete([FromBody] Metric metric)
+        {
+            MetricsLogic.DeleteTable();
+            return "Table Deleted!";
+        }
     }
 }

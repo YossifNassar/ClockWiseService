@@ -1,8 +1,13 @@
-﻿
+﻿using System;
+
 namespace Metrics.Models
 {
     public class Metric
     {
+        /// <summary>
+        /// date of this metric.
+        /// </summary>
+        public string Date { get; set; }
 
         /// <summary>
         /// Numeric value of heart rate.
@@ -10,8 +15,8 @@ namespace Metrics.Models
         public int HeartRate { get; set; }
 
         /// <summary>
-        /// The sleep .
+        /// The person's movement.
         /// </summary>
-        public int SleepCycle { get; set; }
+        public int Movement { get; set; }
     }
 }
