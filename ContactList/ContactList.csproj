@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Metric.cs" />
+    <Compile Include="Models\Secret.cs" />
     <Compile Include="Models\Stat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

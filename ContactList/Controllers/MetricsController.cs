@@ -56,10 +56,14 @@ namespace ContactList.Controllers
             Description = "Deleted",
             Type = typeof(String))]
         [Route("~/metrics/table")]
-        public String Delete([FromBody] Metric metric)
+        public String Delete([FromBody] Secret secret)
         {
-            MetricsLogic.DeleteTable();
-            return "Table Deleted!";
+            if(secret.UserName.Equals("clockWise") && secret.Password.Equals("SCSC123"))
+            {
+                MetricsLogic.DeleteTable();
+                return "Table Deleted!";
+            }
+            return "No Authentication!";
         }
     }
 }
