@@ -18,9 +18,9 @@ namespace ContactList.Controllers
         }
 
         /// <summary>
-        /// Gets the list of contacts
+        /// Gets the list of metrics
         /// </summary>
-        /// <returns>The contacts</returns>
+        /// <returns>The metrics</returns>
         [HttpGet]
         [SwaggerResponse(HttpStatusCode.OK,
             Type = typeof(IEnumerable<Metric>))]
@@ -31,10 +31,10 @@ namespace ContactList.Controllers
         }
 
         /// <summary>
-        /// Creates a new contact
+        /// Creates a new metric
         /// </summary>
-        /// <param name="contact">The new contact</param>
-        /// <returns>The saved contact</returns>
+        /// <param name="contact">The new metric</param>
+        /// <returns>The saved metric</returns>
         [HttpPost]
         [SwaggerResponse(HttpStatusCode.Created,
             Description = "Created",
